@@ -1,50 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Inflatable Games Gallery</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<style>
+:root {
+  font-size: 62.5%;
+  --primary: #0f172a;
+  --accent: #2563eb;
+  --bg: #f8fafc;
+  --card-bg: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--primary);
+}
+
+.section {
+  padding: 2rem;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* GRID FIX */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: start;
+  grid-auto-rows: 1fr;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 1.6rem;
+  overflow: hidden;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-header {
+  padding: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  min-height: 4.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.swiper {
+  width: 100%;
+  height: 20rem;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+  transform: scale(0.75);
+}
+
+/* BUTTON */
+.call-btn {
+  display: block;
+  margin: 3rem auto 0;
+  padding: 1.2rem 2.4rem;
+  font-size: 1.6rem;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 1rem;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .swiper { height: 24rem; }
+}
+</style>
+
+</head>
+
+<body>
+
 <section class="section">
-  <h2>Indoor Activities</h2>
+<h2>Our Inflatable Games</h2>
 
-  <div class="gallery-grid indoor-grid">
+<div class="gallery-grid">
 
-```
-<!-- Nerf -->
 <div class="card">
-  <div class="card-header">Nerf</div>
+  <div class="card-header">Bounce House</div>
   <div class="swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="https://picsum.photos/400/300?21"></div>
-      <div class="swiper-slide"><img src="https://picsum.photos/400/300?22"></div>
+      <div class="swiper-slide"><img src="https://raw.githubusercontent.com/Pengister/Anytime-fun-first-gallery/refs/heads/main/bounce%20houses/castle%20bounce%20house%20(1).jfif"></div>
+      <div class="swiper-slide"><img src="https://github.com/Pengister/Anytime-fun-first-gallery/blob/main/bounce%20houses/treehouse_bouncehouse%20(1).jpg?raw=true"></div>
+      <div class="swiper-slide"><img src="https://github.com/Pengister/Anytime-fun-first-gallery/blob/main/bounce%20houses/bounce%20house%20vector%20file.png?raw=true"></div>
+      <div class="swiper-slide"><img src="https://github.com/Pengister/Anytime-fun-first-gallery/blob/main/bounce%20houses/Big%20Bounce%20house%20(1).jpg?raw=true"></div>
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
 </div>
 
-<!-- Gellyball -->
 <div class="card">
-  <div class="card-header">Gellyball</div>
+  <div class="card-header">Combos</div>
   <div class="swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="https://picsum.photos/400/300?23"></div>
-      <div class="swiper-slide"><img src="https://picsum.photos/400/300?24"></div>
+      <div class="swiper-slide"><img src="https://github.com/Pengister/Anytime-fun-first-gallery/blob/main/Combos/sports%20combo%20(1).jpg?raw=true"></div>
+      <div class="swiper-slide"><img src="https://github.com/Pengister/Anytime-fun-first-gallery/blob/main/Combos/spiderman%20combo%20(1).jpg?raw=true"></div>
+      <div class="swiper-slide"><img src="https://github.com/Pengister/Anytime-fun-first-gallery/blob/main/Combos/red%20castle%20combo.jpg?raw=true"></div>
+      <div class="swiper-slide"><img src="https://github.com/Pengister/Anytime-fun-first-gallery/blob/main/Combos/princess%20combo.jpg?raw=true"></div>
+       <div class="swiper-slide"><img src="https://github.com/Pengister/Anytime-fun-first-gallery/blob/main/Combos/Castle%20Combo%20bounce%20_%20Slide%20(1).jpg?raw=true"></div>
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
 </div>
 
-<!-- Laser Tag (Clickable) -->
 <div class="card">
-  <div class="card-header">Laser Tag</div>
-  <a href="https://www.yourlink.com" target="_blank">
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="https://picsum.photos/400/300?25"></div>
-        <div class="swiper-slide"><img src="https://picsum.photos/400/300?26"></div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+  <div class="card-header">Obstacles</div>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="https://github.com/Pengister/Anytime-fun-first-gallery/blob/main/obstacle/junior%20obstacle%20(1).png?raw=true"></div>
+      <div class="swiper-slide"><img src="https://github.com/Pengister/Anytime-fun-first-gallery/blob/main/obstacle/biohazzard%20obstacle%20course.jpg?raw=true"></div>
+      <div class="swiper-slide"><img src="https://github.com/Pengister/Anytime-fun-first-gallery/blob/main/obstacle/7%20element%20obstacle%20course.jpg?raw=true"></div>
     </div>
-  </a>
-</div>
-```
-
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
   </div>
+</div>
+
+<div class="card">
+  <div class="card-header">Specialty Games</div>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="https://picsum.photos/400/300?9"></div>
+      <div class="swiper-slide"><img src="https://picsum.photos/400/300?10"></div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+
+
+</div>
+
+<a href="tel:+7019971126" class="call-btn"> Call Now</a>
+
 </section>
+
+<div class="lightbox" id="lightbox">
+  <img src="" id="lightbox-img">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+document.querySelectorAll('.swiper').forEach((el) => {
+  new Swiper(el, {
+    loop: true,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: el.querySelector('.swiper-button-next'),
+      prevEl: el.querySelector('.swiper-button-prev'),
+    },
+  });
+});
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+document.addEventListener('click', (e) => {
+  if (e.target.tagName === 'IMG') {
+    lightbox.classList.add('active');
+    lightboxImg.src = e.target.src;
+  }
+});
+
+lightbox.addEventListener('click', () => {
+  lightbox.classList.remove('active');
+});
+</script>
+
+</body>
+</html>
