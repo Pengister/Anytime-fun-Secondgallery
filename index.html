@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -38,15 +37,14 @@ body {
   margin-bottom: 3rem;
 }
 
-/* GRID FIX */
+/* FIXED GRID */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  align-items: start;
-  grid-auto-rows: 1fr;
 }
 
+/* CARD */
 .card {
   background: var(--card-bg);
   border-radius: 1.6rem;
@@ -54,68 +52,42 @@ body {
   box-shadow: 0 1rem 2rem rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .card-header {
   padding: 1.5rem;
   font-size: 1.8rem;
   font-weight: 600;
-  min-height: 4.5rem;
-  display: flex;
-  align-items: center;
 }
 
+/* SWIPER */
 .swiper {
   width: 100%;
   height: 20rem;
-  flex-shrink: 0;
   cursor: pointer;
+}
+
+.swiper-slide a {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .swiper-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide img:hover {
+  transform: scale(1.05);
 }
 
 .swiper-button-next,
 .swiper-button-prev {
   color: #fff;
   transform: scale(0.75);
-}
-
-/* BUTTON */
-.call-btn {
-  display: block;
-  margin: 3rem auto 0;
-  padding: 1.2rem 2.4rem;
-  font-size: 1.6rem;
-  background: var(--accent);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 999px;
-}
-
-/* LIGHTBOX */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.9);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 1rem;
-}
-
-.lightbox.active {
-  display: flex;
 }
 
 /* RESPONSIVE */
@@ -138,42 +110,50 @@ body {
 
 <div class="gallery-grid">
 
+<!-- CARD 1 -->
 <div class="card">
   <div class="card-header">Nerf Battle Tag</div>
   <div class="swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="https://raw.githubusercontent.com/Pengister/Anytime-fun-first-gallery/refs/heads/main/bounce%20houses/castle%20bounce%20house%20(1).jfif"></div>
+      <div class="swiper-slide">
+        <a href="https://www.fargotag.com/" target="_blank">
+          <img src="https://raw.githubusercontent.com/Pengister/Anytime-fun-first-gallery/refs/heads/main/bounce%20houses/castle%20bounce%20house%20(1).jfif">
+        </a>
+      </div>
     </div>
   </div>
 </div>
 
+<!-- CARD 2 -->
 <div class="card">
   <div class="card-header">Gellyball Battle Tag (orbee blaster)</div>
   <div class="swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="https://github.com/Pengister/Anytime-fun-first-gallery/blob/main/Combos/sports%20combo%20(1).jpg?raw=true"></div>
-    </div
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-header">Tactical Laser Tag</div>
-  <div class="swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="https://picsum.photos/400/300?9"></div>
+      <div class="swiper-slide">
+        <a href="https://www.fargotag.com/" target="_blank">
+          <img src="https://github.com/Pengister/Anytime-fun-first-gallery/blob/main/Combos/sports%20combo%20(1).jpg?raw=true">
+        </a>
+      </div>
     </div>
   </div>
 </div>
 
-
+<!-- CARD 3 -->
+<div class="card">
+  <div class="card-header">Tactical Laser Tag</div>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <a href="https://www.fargotag.com/" target="_blank">
+          <img src="https://picsum.photos/400/300?9">
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 
-
+</div>
 </section>
-
-<div class="lightbox" id="lightbox">
-  <img src="" id="lightbox-img">
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -182,25 +162,7 @@ document.querySelectorAll('.swiper').forEach((el) => {
   new Swiper(el, {
     loop: true,
     spaceBetween: 10,
-    navigation: {
-      nextEl: el.querySelector('.swiper-button-next'),
-      prevEl: el.querySelector('.swiper-button-prev'),
-    },
   });
-});
-
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-
-document.addEventListener('click', (e) => {
-  if (e.target.tagName === 'IMG') {
-    lightbox.classList.add('active');
-    lightboxImg.src = e.target.src;
-  }
-});
-
-lightbox.addEventListener('click', () => {
-  lightbox.classList.remove('active');
 });
 </script>
 
